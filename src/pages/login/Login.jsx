@@ -58,6 +58,9 @@ const Login = () => {
           Login
         </button>
       </form>
+      <span>default logins</span>
+      <span>username: admin</span>
+      <span>password: 123456</span>
     </div>
   );
 };
