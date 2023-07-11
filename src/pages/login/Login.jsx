@@ -21,10 +21,13 @@ const Login = () => {
     e.preventDefault();
     try {
       dispatch({ type: "LOGIN_START" });
-      const res = await axios.post(" http://localhost:5000/api/auth/login", {
-        username,
-        password,
-      });
+      const res = await axios.post(
+        " https://ucclecturehall-api.onrender.com/api/auth/login",
+        {
+          username,
+          password,
+        }
+      );
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       res.data && navigate("/");
     } catch (error) {

@@ -21,7 +21,9 @@ const Nlt = () => {
   useEffect(() => {
     const fetchLectureHalls = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/nlt/find");
+        const response = await axios.get(
+          "https://ucclecturehall-api.onrender.com/api/nlt/find"
+        );
 
         setNltLecture(response.data);
       } catch (error) {
@@ -77,7 +79,7 @@ const Nlt = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/nlt/book/${id}`,
+        `https://ucclecturehall-api.onrender.com/api/nlt/book/${id}`,
         {
           lectureHallName: selectedLectureHall.name,
           startTime,
@@ -110,7 +112,7 @@ const Nlt = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/nlt/unbook/${id}`,
+        `https://ucclecturehall-api.onrender.com/api/nlt/unbook/${id}`,
         {
           lectureHallName: selectedLectureHall.name,
           startTime,

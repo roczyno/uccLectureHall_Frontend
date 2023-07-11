@@ -23,7 +23,9 @@ const Swlt = () => {
   useEffect(() => {
     const fetchLectureHalls = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/swlt/find");
+        const response = await axios.get(
+          "https://ucclecturehall-api.onrender.com/api/swlt/find"
+        );
 
         setSWLTLecture(response.data);
       } catch (error) {
@@ -79,7 +81,7 @@ const Swlt = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/lt/swlt/${id}`,
+        `https://ucclecturehall-api.onrender.com/api/lt/swlt/${id}`,
         {
           lectureHallName: selectedLectureHall.name,
           startTime,
@@ -111,7 +113,7 @@ const Swlt = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/swlt/unbook/${id}`,
+        `https://ucclecturehall-api.onrender.com/api/swlt/unbook/${id}`,
         {
           lectureHallName: selectedLectureHall.name,
           startTime,

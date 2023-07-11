@@ -11,12 +11,17 @@ const Admin = () => {
   const handleRegistration = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/auth/register", {
-        username,
-        email,
-        password,
-      });
-      const res = await axios.get("http://localhost:5000/api/users/find");
+      await axios.post(
+        "https://ucclecturehall-api.onrender.com/api/auth/register",
+        {
+          username,
+          email,
+          password,
+        }
+      );
+      const res = await axios.get(
+        "https://ucclecturehall-api.onrender.com/api/users/find"
+      );
       setUsers(res.data);
       setEmail("");
       setUsername("");
@@ -30,7 +35,9 @@ const Admin = () => {
   useEffect(() => {
     const getUsers = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/users/find");
+        const res = await axios.get(
+          "https://ucclecturehall-api.onrender.com/api/users/find"
+        );
         setUsers(res.data);
       } catch (error) {}
     };
@@ -40,7 +47,9 @@ const Admin = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/users/delete/${id}`);
+      await axios.delete(
+        `https://ucclecturehall-api.onrender.com/api/users/delete/${id}`
+      );
       setUsers(users.filter((item) => item._id !== id));
     } catch (error) {
       console.log(error);

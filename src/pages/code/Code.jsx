@@ -20,7 +20,9 @@ const Code = () => {
   useEffect(() => {
     const fetchLectureHalls = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/code/find");
+        const response = await axios.get(
+          "https://ucclecturehall-api.onrender.com/api/code/find"
+        );
 
         setCodeLecture(response.data);
       } catch (error) {
@@ -76,7 +78,7 @@ const Code = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/code/book/${id}`,
+        `https://ucclecturehall-api.onrender.com/api/code/book/${id}`,
         {
           lectureHallName: selectedLectureHall.name,
           startTime,
@@ -108,7 +110,7 @@ const Code = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/code/unbook/${id}`,
+        `https://ucclecturehall-api.onrender.com/api/code/unbook/${id}`,
         {
           lectureHallName: selectedLectureHall.name,
           startTime,
