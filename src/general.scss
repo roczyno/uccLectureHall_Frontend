@@ -1,0 +1,158 @@
+.calc {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    content: "";
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 60px;
+    left: 90px;
+    gap: 50px;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    animation: zoomInOut 20s ease infinite;
+    overflow: hidden;
+  }
+
+  button {
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #0c1023;
+    color: #eaa023;
+    cursor: pointer;
+  }
+
+  .container {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    top: 90px;
+    left: 70px;
+
+    flex-wrap: wrap;
+    gap: 30px;
+
+    width: 100%;
+    height: auto;
+
+    .book {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      position: absolute;
+      top: 40%;
+      right: 5%;
+      gap: 30px;
+      width: 100%;
+      color: #eaa023;
+
+      table {
+        text-align: center;
+        border-spacing: 0;
+        border-collapse: collapse;
+        border-radius: 12px 12px 0 0;
+        background-color: transparent;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(32, 32, 32, 0.3);
+        border: 1px solid #0c1023;
+
+        thead {
+          background-color: #0c1023;
+        }
+        th,
+        td {
+          padding: 8px 15px;
+        }
+      }
+      .bookings {
+        display: flex;
+        gap: 30px;
+        .below {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          flex-direction: column;
+        }
+
+        label {
+          margin-right: 20px;
+        }
+
+        select {
+          padding: 5px;
+          border-radius: 5px;
+          font-size: 15px;
+          margin-top: 19px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+        .button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+
+          button {
+            padding: 20px;
+          }
+        }
+      }
+    }
+    .item {
+      height: 170px;
+      width: 170px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 1s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      img {
+        height: 60%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .desc {
+        display: flex;
+        padding: 10px 10px;
+        flex-direction: column;
+        color: white;
+        gap: 2px;
+        align-items: center;
+        background-color: #0c1023;
+        width: 100%;
+        height: 40%;
+        font-weight: 300;
+        color: #eaa023;
+        font-size: 11px;
+      }
+    }
+  }
+}
